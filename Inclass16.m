@@ -108,6 +108,9 @@ peaksmatched=MatchFrames(peaks,2,50);
 unmatched=sum(peaksmatched{1}(:,4)==1);
 
 %3
+xyf1=peaks{1}(:,1:2); x1x2=[xyf1(:,1),xyf2(:,1)];
+xyf2=peaks{2}(:,1:2); y1y2=[xyf1(:,2),xyf2(:,2)];
+
 figure(10); imshow(imgt1',lims); hold on;
 for ii=1:size(peaks{1})
     text(peaks{1}(ii,1),peaks{1}(ii,2),int2str(ii),'Color','r','FontSize',18);
@@ -116,6 +119,5 @@ for ii=1:size(peaks{1})
         text(peaks{2}(nextind,1),peaks{2}(nextind,2),int2str(ii),'Color','c','FontSize',18);
     end
 end
-
-
-
+hold on;
+plot(x1x2,y1y2,'g');
