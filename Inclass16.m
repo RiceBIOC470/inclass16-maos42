@@ -108,8 +108,11 @@ peaksmatched=MatchFrames(peaks,2,50);
 unmatched=sum(peaksmatched{1}(:,4)==1);
 
 %3
-xyf1=peaks{1}(:,1:2); x1x2=[xyf1(:,1),xyf2(:,1)];
-xyf2=peaks{2}(:,1:2); y1y2=[xyf1(:,2),xyf2(:,2)];
+xyf1=peaks{1}(:,1:2);
+xyf2=peaks{2}(:,1:2); 
+
+x1x2=[xyf1(:,1),xyf2(:,1)];
+y1y2=[xyf1(:,2),xyf2(:,2)];
 
 figure(10); imshow(imgt1',lims); hold on;
 for ii=1:size(peaks{1})
